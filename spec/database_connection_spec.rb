@@ -41,6 +41,7 @@ describe DatabaseConnection do
   end
 
   it "can SELECT" do
+    skip
     expected_users = [
       {
         "username" => "hunter",
@@ -58,6 +59,7 @@ describe DatabaseConnection do
   end
 
   it "can filter" do
+    skip
     hunter_results = database_connection.sql("SELECT * from users_test WHERE username = 'hunter';")
 
     expected_results = [
@@ -72,6 +74,7 @@ describe DatabaseConnection do
   end
 
   it "can DELETE" do
+    skip
     database_connection.sql("DELETE FROM users_test where username = 'hunter';")
 
     expected_results = [
