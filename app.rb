@@ -10,10 +10,16 @@ class App < Sinatra::Application
   def initialize
     super
     @database_connection = DatabaseConnection.establish(ENV["RACK_ENV"])
+
   end
 
   get "/" do
     erb :homepage
+  end
+
+  post "/" do
+    @database_connection.sql("INSERT INTO users (username) VALUES ('#{params[:username]}');")
+  redirect "/"
   end
 
   get "/registration/new" do

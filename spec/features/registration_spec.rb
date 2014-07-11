@@ -11,11 +11,10 @@ require "spec_helper.rb"
 
 feature "#registration" do
   scenario "creates account upon submit" do
-    visit "/registration"
+    visit "/registration/new"
 
-
-      fill_in("username", :with => "pgrunde")
-      fill_in("password", :with => "drowssap")
+      fill_in "username", :with => "pgrunde"
+      fill_in "password", :with => "drowssap"
 
       click_button "Register"
 

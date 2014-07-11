@@ -14,3 +14,16 @@ feature "registration_form" do
   end
 end
 
+feature "Login" do
+  scenario "allows user to login" do
+    visit "/"
+
+      fill_in "username", :with => "pgrunde"
+      fill_in "password", :with => "drowssap"
+
+      click_button "Login"
+
+      expect(page).to have_content("Welcome, pgrunde!")
+
+    end
+end
