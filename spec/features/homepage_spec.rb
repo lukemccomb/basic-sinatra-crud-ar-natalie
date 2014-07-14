@@ -25,5 +25,9 @@ feature "Login" do
 
       expect(page).to have_content("Welcome, pgrunde!")
 
-    end
+  end
+  scenario "logged in user only sees 'Logout' button" do
+    expect(page).to have_content("Logout")
+  end
+  #As a logged in user, I no longer see the "Login" or "Registration" button, but instead "Logout"
 end
